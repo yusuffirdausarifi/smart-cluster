@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard{
+    width: 100%;
+}
+
+.topNav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    font-family: "Bebas Neue";
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.imageNav{
+    width: 30%;
+}
+
+.imageNav img{
+    width: 30%;
+    margin-left: 10%;
+}
+
+.titleNav{
+    width: 30%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.76);
+}
+
+.titleNav h2{
+    font-size: 2.5vw;
+}
+
+.versionNav{
+    width: 30%;
+    text-align: right;
+}
+
+.versionNav h4{
+    font-size: 1.3vw;
+    font-weight: 700;
+    margin-right: 10%;
+    color: rgba(0, 0, 0, 0.808);
+}
+
+.mainContent{
+    width: 100%;
+    margin-top: 1%;
+    font-family: "Roboto";
+}
+
+.topContent{
+    height: 35vh;
+    display: flex;
+    width: 100%;
+}
+
+.boxTotal{
+    width: 25%;
+    margin-left: 3%;
+    border-radius: 5px;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.boxAlarm{
+    border-radius: 5px;
+    width: 66%;
+    margin-left: 3%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.smallBox{
+    background-color: rgba(82, 82, 82, 0.226);
+    height: 60%;
+    width: 3%;
+    margin: 0 3% 0 5%;
+    border-radius: 5px;
+}
+
+.smallBoxAlarm{
+    background-color: rgba(82, 82, 82, 0.226);
+    height: 60%;
+    width: 1.1%;
+    margin: 0 1% 0 2%;
+    border-radius: 5px;
+}
+
+.titleBox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 20%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+}
+
+.titleBox h3{
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.808);
+}
+
+.contentTotal{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentTotal img{
+    width: 35%;
+}
+
+.teksTotal{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 5%;
+    width: 40%;
+    height: 70%;
+}
+
+.teksTotal h2{
+    font-size: 2vw;
+}
+
+.contentAlarm{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentAlarm img{
+    width: 15%;
+    margin-left: 4%
+}
+
+.contentAlarm p{
+    margin-left: 3%;
+    width: 50%;
+    font-weight: 500;
+    font-size: 1vw;
+    color: rgba(0, 0, 0, 0.651);
+    text-align: justify;
+}
+
+.featureList{
+    width: 30%;
+    margin-left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65%;
+    margin-right: 3%;
+}
+
+.featureList img{
+    width: 100%;
+}

@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.listDevice{
+    width: 100%;
+}
+
+.topDevice{
+    height: 21vh;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 1.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botDevice{
+    height: 21vh;
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.boxDevice{
+    width: 23%;
+    height: 100%;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 10px;
+}
+
+.nameDevice{
+    width: 60%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: -3%;
+    border-radius: 5px;
+}
+
+.nameDevice h3{
+    text-align: center;
+    padding: 3% 0%;
+    color: rgb(65, 65, 65);
+}
+
+.notifAck{
+    width: 100%;
+    display: flex;
+    margin-top: 3%;
+    align-items: center;
+    justify-content: center;
+}
+
+.notifAck img{
+    width: 30%;
+}
+
+.buttonList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.buttonList button{
+    width: 80%;
+    border: none;
+    padding: 5% 0;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 0.8vw;
+}
+
+.buttonList button~button{
+    margin-top: 3%;
+}
+
+.ack{
+    background-color: rgb(2, 104, 44);
+    color: white;
+    cursor: pointer;
+}
+
+.ack:hover{
+    background-color: rgb(1, 73, 31);
+}
+
+.rel{
+    background-color: chocolate;
+    color: white;
+    cursor: pointer;
+}
+
+.rel:hover{
+    background-color: rgb(158, 79, 22);
+}
+
+.relno{
+    background-color: rgb(179, 179, 179);
+    color: rgb(73, 73, 73);
+    cursor: default;
+}
+
+.ackno{
+    background-color: rgb(179, 179, 179);
+    color: rgb(73, 73, 73);
+    cursor: default;
+}
+
+.detailAlarm{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.detailAlarm button{
+    width: 100%;
+    font-size: 1vw;
+    padding: 2%;
+    font-weight: 600;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #164396;
+    cursor: pointer;
+}
+
+.detailAlarm button:hover{
+    background-color: #041638;
+}

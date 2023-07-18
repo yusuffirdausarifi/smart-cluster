@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 .detailListAlarm{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.575);
-    position: absolute;
+    position: fixed;
     top: 0;
     display: flex;
     align-items: center;
@@ -15,12 +17,12 @@
     margin: 0 auto;
     width: 50%;
     border-radius: 10px;
-    height: 35vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
+    position: absolute;
 }
 
 .boxListDetail button{
@@ -44,6 +46,7 @@
 }
 
 .listAlarm{
+    margin: 8% 0%;
     display: flex;
     width: 80%;
     align-items: center;
@@ -81,10 +84,19 @@
     width: 30%;
 }
 
-.circleStatus{
-    width: 10vh;
-    height: 10vh;
-    background-color: rgb(10, 214, 27);
-    margin-top: 15%;
-    border-radius: 50%;
+.listAlarm img{
+    width: 70%;
+    margin-top: 4%;
+}
+
+.alarm1 h2{
+    font-size: 1.3vw;
+}
+
+.alarm2 h2{
+    font-size: 1.3vw;
+}
+
+.alarm3 h2{
+    font-size: 1.3vw;
 }

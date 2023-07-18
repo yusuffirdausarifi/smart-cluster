@@ -58,113 +58,126 @@
 }
 
 .topContent{
-    height: 35vh;
     display: flex;
-    width: 100%;
-}
-
-.boxTotal{
-    width: 25%;
-    margin-left: 3%;
-    border-radius: 5px;
-    height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.boxAlarm{
-    border-radius: 5px;
-    width: 66%;
-    margin-left: 3%;
-    height: 100%;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
-.smallBox{
-    background-color: rgba(82, 82, 82, 0.226);
-    height: 60%;
-    width: 3%;
-    margin: 0 3% 0 5%;
-    border-radius: 5px;
-}
-
-.smallBoxAlarm{
-    background-color: rgba(82, 82, 82, 0.226);
-    height: 60%;
-    width: 1.1%;
-    margin: 0 1% 0 2%;
-    border-radius: 5px;
-}
-
-.titleBox{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    height: 20%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
-}
-
-.titleBox h3{
-    font-weight: 900;
-    color: rgba(0, 0, 0, 0.808);
-}
-
-.contentTotal{
-    height: 80%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contentTotal img{
-    width: 35%;
-}
-
-.teksTotal{
-    display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin-left: 5%;
-    width: 40%;
-    height: 70%;
-}
-
-.teksTotal h2{
-    font-size: 2vw;
-}
-
-.contentAlarm{
     width: 100%;
-    height: 80%;
-    display: flex;
+}
+.titleProject{
+    margin: 0 auto;
+    width: 94%;
+    margin-top: 0%;
+    margin-bottom: 1%;
+    text-align: center;
+    padding: 0.7% 0%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    height: fit-content;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+}
+
+.titleProject h1{
+    color: white;
+    font-family: "Bebas Neue";
+    font-size: 1.5vw;
+}
+
+.projectDefinition{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 94%;
+    margin: 0 auto;
+    margin-bottom: 2%;
+}
+
+.projectImage{
+    width: 70%;
+    margin: 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 2%;
 }
 
-.contentAlarm img{
-    width: 15%;
-    margin-left: 4%
-}
-
-.contentAlarm p{
-    margin-left: 3%;
-    width: 50%;
-    font-weight: 500;
-    font-size: 1vw;
-    color: rgba(0, 0, 0, 0.651);
-    text-align: justify;
-}
-
-.featureList{
+.deviceImage{
     width: 30%;
-    margin-left: 0%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 65%;
-    margin-right: 3%;
+}
+.featureList{
+    width: 40%;
 }
 
-.featureList img{
-    width: 100%;
+.projectText{
+    margin-top: 2%;
+    padding: 0% 7%;
+    margin-bottom: 2%;
 }
+
+.projectText p{
+    font-size: 1.1vw;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.644);
+    font-weight: 400;
+}
+
+.bottomContent{
+    margin-top: 2%;
+}
+
+@media screen and (max-width: 800px){
+    .titleProject h1{
+        font-size: 3vw;
+    }
+
+    .projectImage{
+        flex-direction: column;
+    }
+
+    .projectImage img{
+        width: 50%;
+        margin-top: 3%;
+    }
+
+    .imageNav img{
+        width: 50%;
+    }
+
+    .titleNav h2{
+        font-size: 4vw;
+    }
+
+    .versionNav h4{
+        font-size: 3vw;
+    }
+
+    .projectText p{
+        margin-top: 3%;
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .titleProject h1{
+        font-size: 4vw;
+    }
+
+    .projectImage img{
+        width: 70%;
+        margin-top: 3%;
+    }
+
+    .imageNav img{
+        width: 70%;
+    }
+
+    .titleNav h2{
+        font-size: 5vw;
+    }
+
+    .versionNav h4{
+        font-size: 4vw;
+    }
+
+    .projectText p{
+        margin-top: 5%;
+        font-size: 3.5vw;
+    }
+}
+

@@ -1,28 +1,24 @@
 import "../style/detail.css"
+import alarmActive from "../asset/active.png";
+import alarmInactive from "../asset/inactive.png";
 
-export const DetailListAlarm = ({handleDetail}) =>{
+export const DetailListAlarm = ({handleDetail, datapb, datafa, dataint, id}) =>{
     return(
         <div className="detailListAlarm">
             <div className="boxListDetail">
-                <button onClick={handleDetail}>X</button>
+                <button onClick={handleDetail}>Exit</button>
                 <div className="listAlarm">
                     <div className="alarm1">
                         <h2>Panic Button</h2>
-                        <div className="circleStatus">
-
-                        </div>
+                        <img src={datapb[id-1]===1? alarmActive:alarmInactive} alt="" />
                     </div>
                     <div className="alarm2">
                         <h2>Fire Alarm</h2>
-                        <div className="circleStatus">
-
-                        </div>
+                        <img src={datafa[id-1]===1? alarmActive:alarmInactive} alt="" />
                     </div>
                     <div className="alarm3">
                         <h2>Intruder Alarm</h2>
-                        <div className="circleStatus">
-
-                        </div>
+                        <img src={dataint[id-1]===1? alarmActive:alarmInactive} alt="" />
                     </div>
                 </div>
             </div>

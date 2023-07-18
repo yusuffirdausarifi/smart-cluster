@@ -1,4 +1,5 @@
 import { Dashboard } from './page/dashboard';
+import { Connector } from 'mqtt-react-hooks';
 
 function App() {
   return (

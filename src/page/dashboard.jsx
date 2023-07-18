@@ -1,15 +1,11 @@
 import "../style/dashboard.css";
 import logo from "../asset/xcamp.png"
-import tech from "../asset/technology.png"
-import alarm from "../asset/alarm.png"
-import fitur from "../asset/fitur.png"
 import { ListDevice } from "../component/listDevice";
-import { useState } from "react";
+import hub from "../asset/hub.png"
+import spoke from "../asset/spoke.png"
+import fitur from "../asset/fitur.png"
 
 export const Dashboard = () =>{
-
-    console.log(window.location.hostname);
-    
 
     return(
         <div className="dashboard">
@@ -20,53 +16,35 @@ export const Dashboard = () =>{
                 <div className="titleNav">
                     <h2>SMART CLUSTER</h2>
                 </div>
+
                 <div className="versionNav">
                     <h4>Version 1.0</h4>
                 </div>
             </div>
             <div className="mainContent">
-                <div className="topContent">
-                    <div className="boxTotal">
-                        <div className="titleBox">
-                            <div className="smallBox">
-
-                            </div>
-                            <h3>TOTAL REGISTERED DEVICE</h3>
-                        </div>
-                        <div className="contentTotal">
-                            <img src={tech} alt="" />
-                            <div className="teksTotal">
-                                <h2>8 Devices</h2>
-                                <p>There are total 8 Device Registered on System</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div className="boxAlarm">
-                        <div className="titleBox">
-                            <div className="smallBoxAlarm">
-
-                            </div>
-                            <h3>SMART CLUSTER EXPLANATION</h3>
-                        </div>
-                        <div className="contentAlarm">
-                            <img src={alarm} alt="" />
-                            <p>
-                                Smart Cluster adalah sebuah solusi teknologi inovatif berbasis IoT yang 
-                                terintegrasi, untuk mendukung keamanan beraktivitas ditempat anda.
-                                <br />
-                                <br />
-                                Dengan berbagai fitur dan manfaat dari Smart Cluster, anda dapat merasakan rasa aman dan nyaman
-                                terhadap tempat tinggal anda ketika beraktifitas diluar rumah. 
-                            </p>
-                            <div className="featureList">
-                                <img src={fitur} alt="" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className="bottomContent">
+            <div className="bottomContent">
                     <ListDevice></ListDevice>
+                </div>
+                <div className="topContent">
+                    <div className="titleProject">
+                        <h1>ABOUT SMART CLUSTER</h1>
+                    </div>
+
+                    <div className="projectDefinition">
+                        <div className="projectImage">
+                            <img src={hub} className="deviceImage" alt="" />
+                            <img src={spoke} className="deviceImage" alt="" />
+                            <img src={fitur} className="featureList" alt="" />
+                        </div>
+                        <div className="projectText">
+                            <p> Discover Smart Cluster, the revolutionary IoT solution for ultimate home security. 
+                                With seamless integration of cutting-edge technology, it offers 
+                                unparalleled peace of mind, allowing you to enjoy worry-free days 
+                                outside your abode. Embrace the enchanting allure of tomorrow's 
+                                safeguarding technology today and revel in the comfort of a protected 
+                                home wherever life leads you.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

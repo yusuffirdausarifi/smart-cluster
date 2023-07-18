@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -8,7 +10,6 @@
 }
 
 .topDevice{
-    height: 21vh;
     width: 94%;
     margin: 0 auto;
     margin-top: 1.5%;
@@ -18,7 +19,6 @@
 }
 
 .botDevice{
-    height: 21vh;
     width: 94%;
     margin: 0 auto;
     margin-top: 2.5%;
@@ -29,7 +29,6 @@
 
 .boxDevice{
     width: 23%;
-    height: 100%;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 10px;
@@ -41,12 +40,17 @@
     background-color: white;
     margin: 0 auto;
     margin-top: -3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 5px;
 }
 
 .nameDevice h3{
     text-align: center;
     padding: 3% 0%;
+    font-size: 1vw;
+    margin-left: 20%;
     color: rgb(65, 65, 65);
 }
 
@@ -54,6 +58,7 @@
     width: 100%;
     display: flex;
     margin-top: 3%;
+    margin-bottom: 13%;
     align-items: center;
     justify-content: center;
 }
@@ -128,10 +133,463 @@
     border: none;
     border-radius: 5px;
     color: white;
-    background-color: #164396;
+    background-color: #174cad;
     cursor: pointer;
 }
 
 .detailAlarm button:hover{
     background-color: #041638;
+}
+
+.titleList{
+    margin: 0 auto;
+    width: 94%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    text-align: center;
+    padding: 0.7% 0%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+}
+
+.titleList h1{
+    color: white;
+    font-family: "Bebas Neue";
+    font-size: 1.5vw;
+}
+
+.titleList~.titleList{
+    margin-top: 3%;
+}
+
+.tableHistory{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    margin: 0 auto;
+    width: 94%;
+    border-radius: 5px;
+    margin-top: -1%;
+    margin-bottom: 3%;
+    padding: 1% 0%;
+}
+
+.tableHistory table{
+    width: 97%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.tableHistory thead{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+}
+
+.tableHistory table th{
+    padding: 1%;
+    font-size: 1.2vw;
+    color: rgba(0, 0, 0, 0.801);
+    font-weight: bold;
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+}
+
+.timestamp{
+    width: 35%;
+}
+
+.devName{
+    width: 30%;
+}
+
+.tableHistory table tbody tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.158);
+}
+
+.tableHistory table td{
+    padding: 1% 0%;
+    text-align: center;
+}
+
+.tableHistory h3{
+    font-weight: 400;
+    font-size: 0.9vw;
+}
+
+.onCommand{
+    background-color: green;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2% 4%;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+}
+
+.offCommand{
+    background-color: rgb(170, 16, 16);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 2% 4%;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;  
+}
+
+.kosong{
+    font-size: 3vw;
+    color: rgba(68, 68, 68, 0.336);
+    padding: 1% 0%;
+    margin: 0 auto;
+}
+
+.statusBarActive{
+    margin-right: 20%;
+    width: 8%;
+    border-radius: 50%;
+    height: 1vw;
+    background-color: #00ff00;
+    animation: glowingGreen 1.5s ease-in-out infinite;
+}
+
+.statusBarInactive{
+    margin-right: 20%;
+    width: 8%;
+    border-radius: 50%;
+    height: 1vw;
+    background-color: #ff0000;
+    animation: glowingRed 1.5s ease-in-out infinite;
+}
+
+.pagination{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination button{
+    cursor: pointer;
+}
+
+.prevDisabled{
+    width: 10%;
+    padding: 0.8% 0%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1vw;
+}
+
+.prevButton{
+    width: 10%;
+    padding: 0.8% 0%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    background-color: #174cad;
+    font-size: 1vw;
+    border-radius: 5px;
+}
+
+.nextDisabled{
+    width: 10%;
+    padding: 0.8% 0%;
+    border: none;
+    font-size: 1vw;
+    border-radius: 5px;
+}
+
+.nextButton{
+    width: 10%;
+    padding: 0.8% 0%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1vw;
+    color: white;
+    font-weight: bold;
+    background-color: #174cad;
+}
+
+.activeNumber{
+    width: 4%;
+    padding: 0.8% 0%;
+    margin: 0% 0.2%;
+    border: none;
+    font-size: 1vw;
+    border-radius: 5px;
+    background-color: #174cad;
+    color: white;
+    font-weight: bold;
+}
+
+.inactiveNumber{
+    border-radius: 5px;
+    font-size: 1vw;
+    width: 4%;
+    padding: 0.8% 0%;
+    margin: 0% 0.3%;
+    border: none;
+}
+
+@keyframes glowingGreen {
+    0% {
+      box-shadow: 0 0 4px 2px #00ff00;
+    }
+    50% {
+      box-shadow: 0 0 7px 3px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 4px 2px #00ff00;
+    }
+  }
+
+  @keyframes glowingRed {
+    0% {
+      box-shadow: 0 0 4px 2px #ff0000;
+    }
+    50% {
+      box-shadow: 0 0 7px 3px #ff0000;
+    }
+    100% {
+      box-shadow: 0 0 4px 2px #ff0000;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .titleList h1{
+        font-size: 2vw;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .titleList h1{
+        font-size: 3vw;
+    }
+
+    .nameDevice h3{
+        font-size: 3vw;
+    }
+
+    .statusBarActive{
+        width: 8%;
+        height: 3.5vw;
+    }
+    
+    .statusBarInactive{
+        width: 8%;
+        height: 3.5vw;
+    }
+
+    .buttonList button{
+        font-size: 2.2vw;
+    }
+
+    .detailAlarm button{
+        font-size: 2.2vw;
+    }
+
+    .topDevice{
+        flex-direction: column;
+        margin-top: 6%;
+    }
+
+    .botDevice{
+        flex-direction: column;
+        margin-top: 7%;
+    }
+
+    .boxDevice{
+        width: 80%;
+    }
+
+    .boxDevice~.boxDevice{
+        margin-top: 7%;
+    }
+
+    .tableHistory table th{
+        font-size: 2vw;
+    }
+
+    .tableHistory h3{
+        font-weight: 400;
+        font-size: 1.8vw;
+    }
+
+    .tableHistory table td{
+        padding: 1.5% 0%;
+        text-align: center;
+    }
+
+    .prevDisabled{
+        font-size: 1.7vw;
+    }
+    
+    .prevButton{
+        font-size: 1.7vw;
+    }
+    
+    .nextDisabled{
+        font-size: 1.7vw;
+    }
+    
+    .nextButton{
+        font-size: 1.7vw;
+    }
+    
+    .activeNumber{
+        font-size: 1.7vw;
+    }
+    
+    .inactiveNumber{
+        font-size: 1.7vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .titleList h1{
+        font-size: 4vw;
+    }
+
+    .nameDevice h3{
+        font-size: 3vw;
+    }
+
+    .statusBarActive{
+        width: 8%;
+        height: 3.5vw;
+    }
+    
+    .statusBarInactive{
+        width: 8%;
+        height: 3.5vw;
+    }
+
+    .buttonList button{
+        font-size: 2.2vw;
+    }
+
+    .detailAlarm button{
+        font-size: 3vw;
+    }
+
+    .topDevice{
+        flex-direction: column;
+        margin-top: 6%;
+    }
+
+    .botDevice{
+        flex-direction: column;
+        margin-top: 7%;
+    }
+
+    .boxDevice{
+        width: 80%;
+    }
+
+    .boxDevice~.boxDevice{
+        margin-top: 7%;
+    }
+
+    .tableHistory table th{
+        font-size: 2.7vw;
+    }
+
+    .tableHistory h3{
+        font-weight: 400;
+        font-size: 2.2vw;
+    }
+
+    .tableHistory table td{
+        padding: 1.5% 0%;
+        text-align: center;
+    }
+
+    .prevDisabled{
+        font-size: 2.2vw;
+    }
+    
+    .prevButton{
+        font-size: 2.2vw;
+    }
+    
+    .nextDisabled{
+        font-size: 2.2vw;
+    }
+    
+    .nextButton{
+        font-size: 2.2vw;
+    }
+    
+    .activeNumber{
+        font-size: 2.2vw;
+    }
+    
+    .inactiveNumber{
+        font-size: 2.2vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .titleList h1{
+        font-size: 5vw;
+    }
+
+    .nameDevice h3{
+        font-size: 3.5vw;
+    }
+
+    .statusBarActive{
+        width: 8%;
+        height: 3.5vw;
+    }
+    
+    .statusBarInactive{
+        width: 8%;
+        height: 3.5vw;
+    }
+
+    .buttonList button{
+        font-size: 3vw;
+    }
+
+    .detailAlarm button{
+        font-size: 4vw;
+    }
+
+    .tableHistory table th{
+        font-size: 3.5vw;
+    }
+
+    .tableHistory h3{
+        font-weight: 400;
+        font-size: 2.5vw;
+    }
+
+    .tableHistory table td{
+        padding: 1.5% 0%;
+        text-align: center;
+    }
+
+    .prevDisabled{
+        font-size: 3vw;
+    }
+    
+    .prevButton{
+        font-size: 3vw;
+    }
+    
+    .nextDisabled{
+        font-size: 3vw;
+    }
+    
+    .nextButton{
+        font-size: 3vw;
+    }
+    
+    .activeNumber{
+        font-size: 3vw;
+    }
+    
+    .inactiveNumber{
+        font-size: 3vw;
+    }
 }

@@ -100,3 +100,25 @@
 .alarm3 h2{
     font-size: 1.3vw;
 }
+
+@media screen and (max-width: 800px){
+    .boxListDetail{
+        width: 90%;
+    }
+
+    .boxListDetail button{
+        font-size: 2.5vw;
+    }
+
+    .alarm1 h2{
+        font-size: 2.5vw;
+    }
+
+    .alarm2 h2{
+        font-size: 2.5vw;
+    }
+
+    .alarm3 h2{
+        font-size: 2.5vw;
+    }
+}

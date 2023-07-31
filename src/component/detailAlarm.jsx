@@ -2,7 +2,7 @@ import "../style/detail.css"
 import alarmActive from "../asset/active.png";
 import alarmInactive from "../asset/inactive.png";
 
-export const DetailListAlarm = ({handleDetail, datapb, datafa, dataint, id}) =>{
+export const DetailListAlarm = ({handleDetail, datapb, datafa, dataint, datapir, id}) =>{
     return(
         <div className="detailListAlarm">
             <div className="boxListDetail">
@@ -19,6 +19,10 @@ export const DetailListAlarm = ({handleDetail, datapb, datafa, dataint, id}) =>{
                     <div className="alarm3">
                         <h2>Intruder Alarm</h2>
                         <img src={dataint[id-1]===1? alarmActive:alarmInactive} alt="" />
+                    </div>
+                    <div className="alarm3">
+                        <h2>PIR Sensor</h2>
+                        <img src={datapir[id-1]===1? alarmActive:alarmInactive} alt="" />
                     </div>
                 </div>
             </div>

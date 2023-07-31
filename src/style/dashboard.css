@@ -121,6 +121,107 @@
     margin-top: 2%;
 }
 
+.boxHub{
+    width: 94%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    height: fit-content;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hubInfo{
+    width: 60%;
+}
+
+.hubInfo h1{
+    font-size: 1.2vw;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 1.5% 0%;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.753);
+    color: white;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
+}
+
+.statusHubIndicator{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.statusBoxHub{
+    width: 27%;
+}
+
+.statusBoxHub h4{
+    font-size: 1.1vw;
+    border-radius: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    text-align: center;
+    padding: 3.5% 0%;
+    color: rgba(0, 0, 0, 0.801);
+}
+
+.boxHub img{
+    width: 20%;
+    padding: 3%;
+}
+
+.indicatorActive{
+    width: 20%;
+    border-radius: 50%;
+    height: 6vh;
+    margin: 0 auto;
+    margin-top: 8%;
+    background-color: #00ff00;
+    animation: glowingGreen 1.5s ease-in-out infinite;
+}
+
+.indicatorInactive{
+    width: 20%;
+    border-radius: 50%;
+    height: 6vh;
+    margin: 0 auto;
+    margin-top: 8%;
+    background-color: #ff0000;
+    animation: glowingRed 1.5s ease-in-out infinite;
+}
+
+.hubHistory{
+    margin-top: 3%;
+}
+
+@keyframes glowingRed {
+    0% {
+      box-shadow: 0 0 4px 2px #ff0000;
+    }
+    50% {
+      box-shadow: 0 0 7px 3px #ff0000;
+    }
+    100% {
+      box-shadow: 0 0 4px 2px #ff0000;
+    }
+  }
+
+  @keyframes glowingGreen {
+    0% {
+      box-shadow: 0 0 4px 2px #00ff00;
+    }
+    50% {
+      box-shadow: 0 0 7px 3px #00ff00;
+    }
+    100% {
+      box-shadow: 0 0 4px 2px #00ff00;
+    }
+  }
+
 @media screen and (max-width: 800px){
     .titleProject h1{
         font-size: 3vw;

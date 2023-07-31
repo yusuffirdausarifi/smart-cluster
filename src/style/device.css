@@ -330,6 +330,10 @@
     border: none;
 }
 
+.deviceHistory{
+    margin-top: 3%;
+}
+
 @keyframes glowingGreen {
     0% {
       box-shadow: 0 0 4px 2px #00ff00;

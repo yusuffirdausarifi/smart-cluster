@@ -10,9 +10,15 @@ export const ListDevice = () =>{
 
     const[status, setStatus] = useState([0,0,0,0,0,0,0,0]);
     const[activeStatus, setActive] = useState([0,0,0,0,0,0,0,0]);
+
+    const[ackButton, setAck] = useState([0,0,0,0,0,0,0,0]);
+    const[releaseButton, setRls] = useState([0,0,0,0,0,0,0,0]);
+    
     const[pb, setPb] = useState([0,0,0,0,0,0,0,0]);
     const[fa, setFa] = useState([0,0,0,0,0,0,0,0]);
     const[int, setInt] = useState([0,0,0,0,0,0,0,0]);
+    const[pir, setPir] = useState([0,0,0,0,0,0,0,0]);
+
     const[history, setHistory] = useState([]);
     const[detail, setDetail] = useState(false);
     const [client, setClient] = useState(false);
@@ -61,8 +67,23 @@ export const ListDevice = () =>{
         const extractedNumber = parseInt(numbersAfterH[1]);
 
 
-        if(y === "PB/On" || y === "FA/On" || y === "Int/On"){
-            setStatus(prevStatus => {
+        if(y === "PB/On" || y === "FA/On" || y === "Int/On" || y === "PIR/On"){
+
+            publishAlarmHub();
+
+              setStatus(prevStatus => {
+                const newStatus = [...prevStatus];
+                newStatus[extractedNumber - 1] = 1;
+                return newStatus;
+              });
+              
+              setAck(prevStatus => {
+                const newStatus = [...prevStatus];
+                newStatus[extractedNumber - 1] = 1;
+                return newStatus;
+              });
+
+              setRls(prevStatus => {
                 const newStatus = [...prevStatus];
                 newStatus[extractedNumber - 1] = 1;
                 return newStatus;
@@ -93,9 +114,17 @@ export const ListDevice = () =>{
                   });
             }
 
+            else if(y === "PIR/On"){
+                setPir(prevStatus => {
+                    const newStatus = [...prevStatus];
+                    newStatus[extractedNumber - 1] = 1;
+                    return newStatus;
+                  });
+            }
+
         }
 
-        else if(y === "PB/Off" || y === "FA/Off" || y === "Int/Off"){
+        else if(y === "PB/Off" || y === "FA/Off" || y === "Int/Off" || y === "PIR/Off"){
 
             if(y === "PB/Off"){
                 setPb(prevStatus => {
@@ -115,6 +144,14 @@ export const ListDevice = () =>{
 
             else if(y === "Int/Off"){
                 setInt(prevStatus => {
+                    const newStatus = [...prevStatus];
+                    newStatus[extractedNumber - 1] = 0;
+                    return newStatus;
+                  });
+            }
+
+            else if(y === "PIR/Off"){
+                setPir(prevStatus => {
                     const newStatus = [...prevStatus];
                     newStatus[extractedNumber - 1] = 0;
                     return newStatus;
@@ -144,6 +181,24 @@ export const ListDevice = () =>{
         console.log('MQTT client is not connected.');
         }
     };
+
+    const publishAlarmHub = () => {
+        if (client && client.connected) {
+        const topic = "Xcamp/SmartCluster/Hub";
+        const message = "AlarmHub/Active";
+        client.publish(topic, message, (err) => {
+            if (err) {
+            console.log('Error while publishing:', err);
+            } else {
+            console.log('Message published successfully.');
+            }
+        });
+        } else {
+        console.log('MQTT client is not connected.');
+        }
+    };
+
+    
 
     const mqttConnect = () => {
 		setClient(
@@ -195,7 +250,7 @@ export const ListDevice = () =>{
 
     useEffect(()=>{
         for (let i = 0; i < 8; i++) {
-            if(pb[i] === 0 && fa[i] === 0 && int[i] === 0){
+            if(pb[i] === 0 && fa[i] === 0 && int[i] === 0 && pir[i] === 0){
                 setStatus(prevStatus => {
                     const newStatus = [...prevStatus];
                     newStatus[i] = 0;
@@ -203,7 +258,7 @@ export const ListDevice = () =>{
                   });
             }    
         }
-    },[pb, fa, int])
+    },[pb, fa, int, pir])
 
     useEffect(()=>{
         if(history.length >=100){
@@ -214,18 +269,30 @@ export const ListDevice = () =>{
     const acknowledgeStatus = (x) =>{
         const topic = `Xcamp/SmartCluster/H${x}`;
         publishMessage(topic, 'Ack/On');
+        
+        setAck(prevStatus => {
+            const newStatus = [...prevStatus];
+            newStatus[x-1] = 0;
+            return newStatus;
+          });
     }
 
     const acknowledgeRelease = (x) =>{
         const topic = `Xcamp/SmartCluster/H${x}`;
         publishMessage(topic, 'Ack/Off');
+
+        setRls(prevStatus => {
+            const newStatus = [...prevStatus];
+            newStatus[x-1] = 0;
+            return newStatus;
+          });
     }
 
     return(
         <div className="listDevice">
 
             <div className="titleList">
-                <h1>Cluster Device List</h1>
+                <h1>Cluster Device List & Data History</h1>
             </div>
 
             <div className="topDevice">
@@ -242,8 +309,8 @@ export const ListDevice = () =>{
                     <div className="notifAck">
                     <img src={s === 1 ? active : inactive} alt="" />
                         <div className="buttonList">
-                            <button className={s === 1 ? "ack" : "ackno"} disabled={s === 1 ? false : true} onClick={() => acknowledgeStatus(String(index + 1))}>Acknowledge</button>
-                            <button className={s === 1 ? "rel" : "relno"} disabled={s === 1 ? false : true} onClick={() => acknowledgeRelease(String(index + 1))}>Release Ack</button>
+                            <button className={ackButton[index] === 1 ? "ack" : "ackno"} disabled={ackButton[index] === 1 ? false : true} onClick={() => acknowledgeStatus(String(index + 1))}>Acknowledge</button>
+                            <button className={releaseButton[index] === 1 ? "rel" : "relno"} disabled={releaseButton[index] === 1 ? false : true} onClick={() => acknowledgeRelease(String(index + 1))}>Release Ack</button>
                         </div>
                     </div>
 
@@ -279,13 +346,11 @@ export const ListDevice = () =>{
             ))}
             </div>
 
-            <div className="titleList">
-                <h1>Alarm History</h1>
+            <div className="deviceHistory">
+                <HistoryData data={history}></HistoryData>
             </div>
 
-            <HistoryData data={history}></HistoryData>
-
-            {detail && <DetailListAlarm handleDetail={handleDetail} datapb={pb} datafa={fa} dataint={int} id={idClient}></DetailListAlarm> }
+            {detail && <DetailListAlarm handleDetail={handleDetail} datapb={pb} datafa={fa} dataint={int} datapir={pir} id={idClient}></DetailListAlarm> }
         </div>
     )
 }

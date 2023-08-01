@@ -61,6 +61,10 @@ export const Dashboard = () =>{
                 setAlarm(true);
             }
 
+            if(y === "AlmClear"){
+                setAlarm(false);
+            }
+
             else if(y === "Life"){
                 if (hubTimeoutRef.current) {
                     clearTimeout(hubTimeoutRef.current);
@@ -70,14 +74,14 @@ export const Dashboard = () =>{
                 hubTimeoutRef.current = setTimeout(resetHub, 20000);
             }
 
-            if(x === "Xcamp/SmartCluster/Hub"){
-                const timestamp = new Date().getTime();
-                const localTime = new Date(timestamp).toLocaleString();
-                const devName = `Hub X001`;
-                const newData = [localTime, devName, y];
+            // if(x === "Xcamp/SmartCluster/Hub"){
+            //     const timestamp = new Date().getTime();
+            //     const localTime = new Date(timestamp).toLocaleString();
+            //     const devName = `Hub X001`;
+            //     const newData = [localTime, devName, y];
 
-                setHistory((prevHistory) => [...prevHistory, newData]);
-            }
+            //     setHistory((prevHistory) => [...prevHistory, newData]);
+            // }
         
     }
 
@@ -127,7 +131,7 @@ export const Dashboard = () =>{
                 <div className="bottomContent">
                     <div className="hubDevice">
                         <div className="titleProject">
-                            <h1>HUB DEVICE & DATA HISTORY</h1>
+                            <h1>HUB DEVICE</h1>
                         </div>
 
                         <div className="boxHub">
@@ -147,7 +151,7 @@ export const Dashboard = () =>{
                                     <div className="statusBoxHub">
                                         <h4>Portal</h4>
 
-                                        <div className={hubPortal === true? "indicatorActive" : "indicatorInactive"}>
+                                        <div className={hubPortal === true? "indicatorInactiveReverse" : "indicatorActiveReverse"}>
                                             {/* <h5>{hubPortal === true? "Open" : "Close"}</h5> */}
                                         </div>
                                     </div>
@@ -155,7 +159,7 @@ export const Dashboard = () =>{
                                     <div className="statusBoxHub">
                                         <h4>Alarm</h4>
 
-                                        <div className={hubAlarm === true? "indicatorActive" : "indicatorInactive"}>
+                                        <div className={hubAlarm === true? "indicatorInactiveReverse" : "indicatorActiveReverse"}>
 
                                         </div>
                                     </div>
@@ -163,9 +167,6 @@ export const Dashboard = () =>{
                             </div>
                         </div>
 
-                        <div className="hubHistory">
-                            <HistoryHub data={history}></HistoryHub>    
-                        </div>
                     </div>
                     <ListDevice></ListDevice>
                 </div>

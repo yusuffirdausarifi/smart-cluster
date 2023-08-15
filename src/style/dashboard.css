@@ -144,6 +144,7 @@
     font-weight: bold;
     text-align: center;
     width: 100%;
+    margin-top: -5%;
     color: rgba(0, 0, 0, 0.753);
     color: white;
     background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% );
@@ -175,9 +176,9 @@
 }
 
 .indicatorActive{
-    width: 20%;
+    width: 21%;
     border-radius: 50%;
-    height: 6vh;
+    height: 90%;
     margin: 0 auto;
     margin-top: 8%;
     background-color: #00ff00;
@@ -185,9 +186,9 @@
 }
 
 .indicatorInactive{
-    width: 20%;
+    width: 21%;
     border-radius: 50%;
-    height: 6vh;
+    height: 90%;
     margin: 0 auto;
     margin-top: 8%;
     background-color: #ff0000;
@@ -195,9 +196,9 @@
 }
 
 .indicatorInactiveReverse{
-    width: 20%;
+    width: 21%;
     border-radius: 50%;
-    height: 6vh;
+    height: 90%;
     margin: 0 auto;
     margin-top: 8%;
     background-color: #ff0000;
@@ -205,9 +206,9 @@
 }
 
 .indicatorActiveReverse{
-    width: 20%;
+    width: 21%;
     border-radius: 50%;
-    height: 6vh;
+    height: 90%;
     margin: 0 auto;
     margin-top: 8%;
     background-color: #00ff00;
@@ -263,9 +264,99 @@
     }
   }
 
+@media screen and (max-width: 1000px){
+
+    .statusBoxHub h4{
+        margin-bottom: 3%;
+    }
+
+    .titleProject h1{
+        font-size: 3.5vw;
+        padding: 0.5% 0%;
+    }
+
+    .boxHub{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .boxHub img{
+        width: 30%;
+    }
+
+    .hubInfo{
+        width: 80%;
+    }
+
+    .hubInfo h1{
+        width: 80%;
+        margin: 0 auto;
+        font-size: 2vw;
+    }
+
+    .statusHubIndicator{
+        margin-top: 4%;
+        margin-bottom: 12%;
+    }
+
+    .statusBoxHub h4{
+        padding: 6% 0%;
+        font-size: 1.7vw;
+    }
+
+    .indicatorActive{
+        width: 25%;
+        border-radius: 50%;
+        height: 90%;
+        margin: 0 auto;
+        margin-top: 8%;
+        background-color: #00ff00;
+        animation: glowingGreen 1.5s ease-in-out infinite;
+    }
+    
+    .indicatorInactive{
+        width: 25%;
+        border-radius: 50%;
+        height: 90%;
+        margin: 0 auto;
+        margin-top: 8%;
+        background-color: #ff0000;
+        animation: glowingRed 1.5s ease-in-out infinite;
+    }
+    
+    .indicatorInactiveReverse{
+        width: 25%;
+        border-radius: 50%;
+        height: 90%;
+        margin: 0 auto;
+        margin-top: 8%;
+        background-color: #ff0000;
+        animation: glowingRed 1.5s ease-in-out infinite;
+    }
+    
+    .indicatorActiveReverse{
+        width: 25%;
+        border-radius: 50%;
+        height: 90%;
+        margin: 0 auto;
+        margin-top: 8%;
+        background-color: #00ff00;
+        animation: glowingGreen 1.5s ease-in-out infinite;
+    }
+}
+
 @media screen and (max-width: 800px){
     .titleProject h1{
-        font-size: 3vw;
+        font-size: 4vw;
+        padding: 1% 0%;
+    }
+
+    .hubInfo h1{
+        font-size: 2.5vw;
+    }
+
+    .hubInfo h4{
+        font-size: 2vw;
     }
 
     .projectImage{
@@ -297,7 +388,7 @@
 
 @media screen and (max-width: 500px){
     .titleProject h1{
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .projectImage img{

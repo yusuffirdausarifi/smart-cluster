@@ -360,13 +360,14 @@
 
   @media screen and (max-width: 1000px) {
     .titleList h1{
-        font-size: 2vw;
+        font-size: 3vw;
+        padding: 0.7% 0%;
     }
   }
 
   @media screen and (max-width: 800px) {
     .titleList h1{
-        font-size: 3vw;
+        font-size: 4vw;
     }
 
     .nameDevice h3{
@@ -450,7 +451,7 @@
 
 @media screen and (max-width: 500px) {
     .titleList h1{
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .nameDevice h3{
